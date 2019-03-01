@@ -23,6 +23,7 @@ import {Observable} from 'rxjs/Observable';
 
 export class AppComponent {
   
+  title = 'angular-quiz';
   private data: Observable<Array<number>>;
   private values: Array<number> = [1,2];
   private anyErrors: boolean;
