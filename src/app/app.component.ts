@@ -1,5 +1,15 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
+import {HttpClient} from "@angular/common/http";
+import * as _ from 'lodash';
+
+interface Course {
+    description: string;
+    courseListIcon:string;
+    iconUrl:string;
+    longDescription:string;
+    url:string;
+}
 
 @Component({
   selector: 'app-root',
@@ -18,21 +28,33 @@ import {Observable} from 'rxjs/Observable';
   <div>Finished: {{ finished }}</div>
   
   <button style="margin-top: 2rem;" (click)="init()">Init</button>
+  <ul *ngIf="courses$ | async as courses else noData">
+	  <li *ngFor="let course of courses">
+		  {{course.description}}
+	  </li> 
+  </ul>
+  <ng-template #noData>No Data Available</ng-template>
 	`
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit {
   
+  courses$: Observable<Course[]>;
   title = 'angular-quiz';
   private data: Observable<Array<number>>;
   private values: Array<number> = [1,2];
   private anyErrors: boolean;
   private finished: boolean;
 
-  constructor() {
+  constructor(private http:HttpClient) {
   }
   
   init() {
+	  this.courses$ = this.http
+		  .get<Course[]>("/courses.json")
+		  .map(data => _.values(data))
+		  .do(console.log);
+
       this.data = new Observable(observer => {
           setTimeout(() => {
               observer.next(); //1?
