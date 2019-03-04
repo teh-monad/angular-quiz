@@ -15,6 +15,7 @@ interface Course {
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.styl'],
+//  providers: [UserService],
   template: `
   <b>Angular 2 Component Using Observables!</b>
  
