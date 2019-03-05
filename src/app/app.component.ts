@@ -35,6 +35,7 @@ interface Course {
 	  </li> 
   </ul>
   <ng-template #noData>No Data Available</ng-template>
+  <app-hero-form></app-hero-form>
 	`
 })
 
