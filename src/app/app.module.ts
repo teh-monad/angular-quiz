@@ -11,6 +11,8 @@ import { AboutComponent } from './about/about.component';
 import { FormsModule }   from '@angular/forms';
 import { HeroFormComponent } from './hero-form/hero-form.component';
 
+import { PowerPipe } from './power.pipe';
+
 const appRoutes: Routes = [
   {path: 'about', component: AboutComponent},
   {path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -21,7 +23,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     AboutComponent,
-    HeroFormComponent
+    HeroFormComponent,
+    PowerPipe
   ],
   imports: [
     BrowserModule,

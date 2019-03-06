@@ -36,6 +36,7 @@ interface Course {
   </ul>
   <ng-template #noData>No Data Available</ng-template>
   <app-hero-form></app-hero-form>
+  <div><h1>Test birthdate is {{ birthday | date | uppercase }}{{2 | power: 5}}</h1></div>
 	`
 })
 
@@ -47,6 +48,7 @@ export class AppComponent implements OnInit {
   private values: Array<number> = [1,2];
   private anyErrors: boolean;
   private finished: boolean;
+  birthday = new Date(1990, 12, 12);
 
   constructor(private http:HttpClient) {
   }
