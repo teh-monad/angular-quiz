@@ -13,6 +13,9 @@ import { HeroFormComponent } from './hero-form/hero-form.component';
 
 import { PowerPipe } from './power.pipe';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { OpenCloseComponent } from './open-close/open-close.component';
+
 const appRoutes: Routes = [
   {path: 'about', component: AboutComponent},
   {path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -24,14 +27,16 @@ const appRoutes: Routes = [
     AppComponent,
     AboutComponent,
     HeroFormComponent,
-    PowerPipe
+    PowerPipe,
+    OpenCloseComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
     AppRoutingModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

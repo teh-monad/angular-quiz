@@ -1,7 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, HostBinding} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 import {HttpClient} from "@angular/common/http";
 import * as _ from 'lodash';
+import {trigger, state, style, animate, transition} from '@angular/animations';
 
 interface Course {
     description: string;
@@ -15,6 +16,7 @@ interface Course {
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.styl'],
+  animations: [],
 //  providers: [UserService],
   template: `
   <b>Angular 2 Component Using Observables!</b>
@@ -37,6 +39,7 @@ interface Course {
   <ng-template #noData>No Data Available</ng-template>
   <app-hero-form></app-hero-form>
   <div><h1>Test birthdate is {{ birthday | date | uppercase }}{{2 | power: 5}}</h1></div>
+  <app-open-close></app-open-close>
 	`
 })
 
