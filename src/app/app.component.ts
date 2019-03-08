@@ -1,8 +1,11 @@
-import {Component, OnInit, HostBinding} from '@angular/core';
+import {Component, OnInit, HostBinding, Injector} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 import {HttpClient} from "@angular/common/http";
 import * as _ from 'lodash';
 import {trigger, state, style, animate, transition} from '@angular/animations';
+import { createCustomElement } from '@angular/elements';
+import { PopupService } from './popup/popup.service';
+import { PopupComponent } from './popup/popup.component';
 
 interface Course {
     description: string;
@@ -40,10 +43,13 @@ interface Course {
   <app-hero-form></app-hero-form>
   <div><h1>Test birthdate is {{ birthday | date | uppercase }}{{2 | power: 5}}</h1></div>
   <app-open-close></app-open-close>
+  <input #input value="Message">
+  <button (click)="popup.showAsComponent(input.value)">Show as component</button>
+  <button (click)="popup.showAsElement(input.value)">Show as element</button>
 	`
 })
 
-export class AppComponent implements OnInit {
+export class AppComponent  { //implements OnInit
   
   courses$: Observable<Course[]>;
   title = 'angular-quiz';
@@ -53,7 +59,9 @@ export class AppComponent implements OnInit {
   private finished: boolean;
   birthday = new Date(1990, 12, 12);
 
-  constructor(private http:HttpClient) {
+  constructor(private http:HttpClient, injector: Injector, public popup: PopupService) {
+	const PopupElement = createCustomElement(PopupComponent, {injector});
+	customElements.define('popup-element', PopupElement);
   }
   
   init() {

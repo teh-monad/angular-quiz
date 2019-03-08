@@ -16,6 +16,9 @@ import { PowerPipe } from './power.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { OpenCloseComponent } from './open-close/open-close.component';
 
+import { PopupComponent } from './popup/popup.component';
+import { PopupService } from './popup/popup.service';
+
 const appRoutes: Routes = [
   {path: 'about', component: AboutComponent},
   {path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -28,7 +31,8 @@ const appRoutes: Routes = [
     AboutComponent,
     HeroFormComponent,
     PowerPipe,
-    OpenCloseComponent
+    OpenCloseComponent,
+    PopupComponent
   ],
   imports: [
     BrowserModule,
@@ -38,8 +42,9 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     BrowserAnimationsModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [PopupService],
+  bootstrap: [AppComponent],
+  entryComponents: [PopupComponent]
 })
 
 export class AppModule { }
