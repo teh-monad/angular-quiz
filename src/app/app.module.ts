@@ -18,6 +18,7 @@ import { OpenCloseComponent } from './open-close/open-close.component';
 
 import { PopupComponent } from './popup/popup.component';
 import { PopupService } from './popup/popup.service';
+import { ClickMeComponent } from './click-me/click-me.component';
 
 const appRoutes: Routes = [
   {path: 'about', component: AboutComponent},
@@ -32,7 +33,8 @@ const appRoutes: Routes = [
     HeroFormComponent,
     PowerPipe,
     OpenCloseComponent,
-    PopupComponent
+    PopupComponent,
+    ClickMeComponent
   ],
   imports: [
     BrowserModule,
