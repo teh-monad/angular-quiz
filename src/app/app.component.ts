@@ -6,6 +6,7 @@ import {trigger, state, style, animate, transition} from '@angular/animations';
 import { createCustomElement } from '@angular/elements';
 import { PopupService } from './popup/popup.service';
 import { PopupComponent } from './popup/popup.component';
+import { Hero } from './hero';
 
 interface Course {
     description: string;
@@ -46,6 +47,15 @@ interface Course {
   <input #input value="Message">
   <button (click)="popup.showAsComponent(input.value)">Show as component</button>
   <button (click)="popup.showAsElement(input.value)">Show as element</button>
+  <h1>{{title}}</h1>
+  <h2>My favorite hero is: {{myHero.name}}</h2>
+  <p>Heroes:</p>
+  <ul>
+    <li *ngFor="let hero of heroes">
+      {{ hero.name }}
+      </li>
+  </ul>
+  <p *ngIf="heroes.length > 3">There are many heroes!</p>
 	`
 })
 
@@ -58,7 +68,14 @@ export class AppComponent  { //implements OnInit
   private anyErrors: boolean;
   private finished: boolean;
   birthday = new Date(1990, 12, 12);
-
+  heroes = [
+    new Hero(1, 'Windstorm'),
+    new Hero(13, 'Bombasto'),
+    new Hero(15, 'Magneta'),
+    new Hero(20, 'Tornado')
+  ];
+  myHero = this.heroes[0];
+  
   constructor(private http:HttpClient, injector: Injector, public popup: PopupService) {
 	const PopupElement = createCustomElement(PopupComponent, {injector});
 	customElements.define('popup-element', PopupElement);
