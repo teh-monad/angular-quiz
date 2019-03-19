@@ -20,6 +20,13 @@ import { PopupComponent } from './popup/popup.component';
 import { PopupService } from './popup/popup.service';
 import { ClickMeComponent } from './click-me/click-me.component';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HeroFormTemplateComponent } from './template/hero-form-template.component';
+import { HeroFormReactiveComponent } from './reactive/hero-form-reactive.component';
+import { ForbiddenValidatorDirective } from './shared/forbidden-name.directive';
+import { IdentityRevealedValidatorDirective } from './shared/identity-revealed.directive';
+import { UniqueAlterEgoValidatorDirective } from './shared/alter-ego.directive';
+
 const appRoutes: Routes = [
   {path: 'about', component: AboutComponent},
   {path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -34,7 +41,12 @@ const appRoutes: Routes = [
     PowerPipe,
     OpenCloseComponent,
     PopupComponent,
-    ClickMeComponent
+    ClickMeComponent,
+    HeroFormTemplateComponent,
+    HeroFormReactiveComponent,
+    ForbiddenValidatorDirective,
+    IdentityRevealedValidatorDirective,
+    UniqueAlterEgoValidatorDirective
   ],
   imports: [
     BrowserModule,
@@ -42,7 +54,8 @@ const appRoutes: Routes = [
     HttpClientModule,
     AppRoutingModule,
     RouterModule.forRoot(appRoutes),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule
   ],
   providers: [PopupService],
   bootstrap: [AppComponent],
