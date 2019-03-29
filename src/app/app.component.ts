@@ -35,10 +35,10 @@ export class AppComponent  { //implements OnInit
   private finished: boolean;
   birthday = new Date(1990, 12, 12);
   heroes = [
-    new Hero(1, 'Windstorm'),
-    new Hero(13, 'Bombasto'),
-    new Hero(15, 'Magneta'),
-    new Hero(20, 'Tornado')
+    new Hero(1, 'Windstorm', '', ''),
+    new Hero(13, 'Bombasto', '', ''),
+    new Hero(15, 'Magneta', '', ''),
+    new Hero(20, 'Tornado', '', '')
   ];
   myHero = this.heroes[0];
   
