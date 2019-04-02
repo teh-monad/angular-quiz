@@ -1,7 +1,8 @@
+import 'rxjs/add/operator/map';
+import * as _ from 'lodash';
 import {Component, OnInit, HostBinding, Injector} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 import {HttpClient} from "@angular/common/http";
-import * as _ from 'lodash';
 import {trigger, state, style, animate, transition} from '@angular/animations';
 import { createCustomElement } from '@angular/elements';
 import { PopupService } from './popup/popup.service';
