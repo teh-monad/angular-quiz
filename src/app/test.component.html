@@ -1,3 +1,79 @@
-<div>
-    <h1>Test Component Content</h1>
-</div>
+<!DOCTYPE html>
+  <html ng-app="app">
+  
+  <head>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+    <script src="http://angular-ui.github.com/bootstrap/ui-bootstrap-tpls-0.6.0.js"></script>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.css" rel="stylesheet">
+  </head>
+  
+  <body ng-controller="MainCtrl">
+  
+    <div ng-controller="TabCtrl">
+      <tabset>
+        <tab ng-repeat="tab in tabs" heading="{{tab.title}}" active="tab.active" select="onTabSelected(tab.slug)">
+          {{ tab.content }}
+        </tab>
+      </tabset>
+    </div>
+    <script type="text/javascript" charset="utf-8">
+      angular.module('app', ['ui.bootstrap']).config(['$routeProvider', '$locationProvider',
+      function($routeProvider, $locationProvider) {
+          $routeProvider.when('/', {
+              controller: 'MainCtrl'
+          }).when('/room/:id', {
+              controller: 'RoomCtrl',
+          }).when('/dashboard', {
+              controller: 'DashboardCtrl'            
+          }).otherwise({
+              redirectTo: '/'
+          });
+          $locationProvider.html5Mode(false);
+      }]);    
+  
+      var TabCtrl = function($scope) {
+        $scope.tabs = [{
+          slug: 'dashboard',
+          title: "Dashboard",
+          content: "Your Dashboard"
+        }, {
+          slug: 'room-1',
+          title: "Room 1",
+          content: "Dynamic content 1"
+        }, {
+          slug: 'room-2',
+          title: "Room 2",
+          content: "Dynamic content 2"
+        }];
+      };
+  
+      RoomCtrl = function($scope, $location) {
+        
+      };
+      
+      DashboardCtrl = function($scope, $location) {
+        
+      };    
+  
+      MainCtrl = function($scope, $location) {
+        
+        $scope.onTabSelected = function(tab) {
+          var route;
+          if (typeof tab === 'string') {
+            switch (tab) {
+              case 'dashboard':
+                route = tab;
+                break;
+              default:
+                route = 'rooms/' + tab;
+                break;
+            }
+          }
+          $location.path('/' + route);
+        };
+        
+      };
+    </script>
+  </body>
+  
+</html>

@@ -51,8 +51,8 @@ export class AppComponent  { //implements OnInit
   init() {
 	  this.courses$ = this.http
 		  .get<Course[]>("/courses.json")
-		  .map(data => _.values(data))
-		  .do(console.log);
+		  .map(data => _.values(data));
+//		  .do(console.log);
 
       this.data = new Observable(observer => {
           setTimeout(() => {
