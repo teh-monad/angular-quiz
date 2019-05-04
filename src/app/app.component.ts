@@ -1,5 +1,6 @@
 import 'rxjs/add/operator/map';
 import * as _ from 'lodash';
+import * as $ from 'jquery';
 import {Component, OnInit, HostBinding, Injector} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 import {HttpClient} from "@angular/common/http";
