@@ -27,6 +27,8 @@ import { ForbiddenValidatorDirective } from './shared/forbidden-name.directive';
 import { IdentityRevealedValidatorDirective } from './shared/identity-revealed.directive';
 import { UniqueAlterEgoValidatorDirective } from './shared/alter-ego.directive';
 
+import { Logger } from './logger.service';
+
 const appRoutes: Routes = [
   {path: 'about', component: AboutComponent},
   {path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -57,7 +59,7 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     ReactiveFormsModule
   ],
-  providers: [PopupService],
+  providers: [PopupService, Logger],
   bootstrap: [AppComponent],
   entryComponents: [PopupComponent]
 })
