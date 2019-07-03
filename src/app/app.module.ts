@@ -60,7 +60,7 @@ const appRoutes: Routes = [
     ReactiveFormsModule
   ],
   providers: [PopupService, Logger],
-  bootstrap: [AppComponent, AboutComponent],
+  bootstrap: [AppComponent, AboutComponent, HeroFormComponent],
   entryComponents: [PopupComponent]
 })
 
