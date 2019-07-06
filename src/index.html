@@ -21,14 +21,17 @@
   </script>
 </head>
 <body>
-<div class="container">
-  <div class="jumbotron">
-	<div id="tabs">
-	  <ul>
-		<li><a href="#tabs-1">Home</a></li>
-		<li><a href="#tabs-2">About</a></li>
-		<li><a href="#tabs-3">App hero</a></li>
-	  </ul>
+
+<div id="tabs" class="mr-auto">
+  <ul>
+	<li><a href="#tabs-1">Home</a></li>
+	<li><a href="#tabs-2">About</a></li>
+	<li><a href="#tabs-3">App hero</a></li>
+	<li><a href="#tabs-4">Open-Close</a></li>
+	<li><a href="#tabs-5">Trash</a></li>
+  </ul>
+	<div class="jumbotron jumbotron-fluid">
+	  <div class="container">
 	  <div id="tabs-1">
 		 <app-root></app-root>
 	  </div>
@@ -38,8 +41,14 @@
 	  <div id="tabs-3">
 		 <app-hero-form></app-hero-form>
 	  </div>
+	  <div id="tabs-4">
+		 <app-open-close></app-open-close>
+	  </div>
+	  <div id="tabs-5">
+		 <router-outlet></router-outlet>
+	  </div>
 	</div>
-   </div>
+	</div>
 </div>
 </body>
 </html>

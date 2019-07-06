@@ -21,36 +21,48 @@
   </li>
 <!--<li> <app-test-component></app-test-component> </li> -->
 </ul>
-<b>Angular 2 Component Using Observables!</b>
+<h2>Component examples: </h2>
+<div class="row" style="margin-top: 50px">
+	<div class="col-sm">
+	<b>Angular 2 Component Using Observables!</b>
 
-<h6 style="margin-bottom: 0">VALUES:</h6>
-<div *ngFor="let value of values">- {{ value }}</div>
+	<h6 style="margin-bottom: 0">VALUES:</h6>
+	<div *ngFor="let value of values">- {{ value }}</div>
 
-<h6 style="margin-bottom: 0">ERRORs:</h6>
-<div>Errors: {{anyErrors}}</div>
+	<h6 style="margin-bottom: 0">ERRORs:</h6>
+	<div>Errors: {{anyErrors}}</div>
 
-<h6 style="margin-bottom: 0">FINISHED:</h6>
-<div>Finished: {{ finished }}</div>
+	<h6 style="margin-bottom: 0">FINISHED:</h6>
+	<div>Finished: {{ finished }}</div>
 
-<button style="margin-top: 2rem;" (click)="init()">Init</button>
-<ul *ngIf="courses$ | async as courses else noData">
-  <li *ngFor="let course of courses">
-	  {{course.description}}
-  </li> 
-</ul>
-<ng-template #noData>No Data Available</ng-template>
-<!-- <app-hero-form></app-hero-form> -->
-<div><h1>Test birthdate is {{ birthday | date | uppercase }}{{2 | power: 5}}</h1></div>
-<app-open-close></app-open-close>
-<input #input value="Message">
-<button (click)="popup.showAsComponent(input.value)">Show as component</button>
-<button (click)="popup.showAsElement(input.value)">Show as element</button>
-<h2>My favorite hero is: {{myHero.name}}</h2>
-<p>Heroes:</p>
-<ul>
-<li *ngFor="let hero of heroes">
-  {{ hero.name }}
-  </li>
-</ul>
-<p *ngIf="heroes.length > 3">There are many heroes!</p>
-<router-outlet></router-outlet>
+	<button style="margin-top: 2rem;" (click)="init()">Init</button>
+	</div>
+	<div class="col-sm">
+	<ul *ngIf="courses$ | async as courses else noData">
+	  <li *ngFor="let course of courses">
+		  {{course.description}}
+	  </li> 
+	</ul>
+	<ng-template #noData>No Data Available</ng-template>
+	<!-- <app-hero-form></app-hero-form> -->
+	<div class="col-sm">
+	<h4>Test birthdate is {{ birthday | date | uppercase }}{{2 | power: 5}}</h4>
+	</div>
+	<!-- <app-open-close></app-open-close> -->
+	<div class="col-sm">
+	<input #input value="Message">
+	<button (click)="popup.showAsComponent(input.value)">Show as component</button>
+	<button (click)="popup.showAsElement(input.value)">Show as element</button>
+	</div>
+	<div class="col-sm">
+	<h2>My favorite hero is: {{myHero.name}}</h2>
+	<p>Heroes:</p>
+	<ul>
+	<li *ngFor="let hero of heroes">
+	  {{ hero.name }}
+	  </li>
+	</ul>
+	<p *ngIf="heroes.length > 3">There are many heroes!</p>
+	<!-- <router-outlet></router-outlet> -->
+	</div>
+</div>
