@@ -28,6 +28,7 @@ import { IdentityRevealedValidatorDirective } from './shared/identity-revealed.d
 import { UniqueAlterEgoValidatorDirective } from './shared/alter-ego.directive';
 
 import { Logger } from './logger.service';
+import { SvgComponent } from './svg/svg.component';
 
 const appRoutes: Routes = [
   {path: 'about', component: AboutComponent},
@@ -48,7 +49,8 @@ const appRoutes: Routes = [
     HeroFormReactiveComponent,
     ForbiddenValidatorDirective,
     IdentityRevealedValidatorDirective,
-    UniqueAlterEgoValidatorDirective
+    UniqueAlterEgoValidatorDirective,
+    SvgComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +62,7 @@ const appRoutes: Routes = [
     ReactiveFormsModule
   ],
   providers: [PopupService, Logger],
-  bootstrap: [AppComponent, AboutComponent, HeroFormComponent, OpenCloseComponent],
+  bootstrap: [AppComponent, AboutComponent, HeroFormComponent, OpenCloseComponent, SvgComponent],
   entryComponents: [PopupComponent]
 })
 
