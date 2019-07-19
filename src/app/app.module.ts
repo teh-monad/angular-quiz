@@ -29,6 +29,8 @@ import { UniqueAlterEgoValidatorDirective } from './shared/alter-ego.directive';
 
 import { Logger } from './logger.service';
 import { SvgComponent } from './svg/svg.component';
+import { SpyDirective } from './spy.directive';
+import { SpyComponent } from './spy/spy.component';
 
 const appRoutes: Routes = [
   {path: 'about', component: AboutComponent},
@@ -50,7 +52,9 @@ const appRoutes: Routes = [
     ForbiddenValidatorDirective,
     IdentityRevealedValidatorDirective,
     UniqueAlterEgoValidatorDirective,
-    SvgComponent
+    SvgComponent,
+    SpyDirective,
+    SpyComponent
   ],
   imports: [
     BrowserModule,
@@ -62,7 +66,7 @@ const appRoutes: Routes = [
     ReactiveFormsModule
   ],
   providers: [PopupService, Logger],
-  bootstrap: [AppComponent, AboutComponent, HeroFormComponent, OpenCloseComponent, SvgComponent],
+  bootstrap: [AppComponent, AboutComponent, HeroFormComponent, OpenCloseComponent, SvgComponent, SpyComponent],
   entryComponents: [PopupComponent]
 })
 
