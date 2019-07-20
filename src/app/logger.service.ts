@@ -12,7 +12,6 @@ export class LoggerService {
   logs: string[] = [];
   prevMsg = '';
   prevMsgCount = 1;
-
   log(msg: string)  {
     if (msg === this.prevMsg) {
       // Repeat message; update last log entry with count.
@@ -27,7 +26,6 @@ export class LoggerService {
 
   clear() { this.logs = []; }
 
-  // schedules a view refresh to ensure display catches up
   tick() {  this.tick_then(() => { }); }
   tick_then(fn: () => any) { setTimeout(fn, 0); }
 }

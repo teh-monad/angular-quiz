@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-
 import { LoggerService }  from './../logger.service';
 
 @Component({
@@ -11,13 +10,13 @@ import { LoggerService }  from './../logger.service';
   ],
   providers:  [LoggerService]
 })
+
 export class SpyComponent {
   newName = 'Herbie';
   heroes: string[] = ['Windstorm', 'Magneta'];
 
   constructor(public logger: LoggerService) {
   }
-
   addHero() {
     if (this.newName.trim()) {
       this.heroes.push(this.newName.trim());

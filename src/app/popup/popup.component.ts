@@ -46,6 +46,7 @@ export class PopupComponent {
     this._message = message;
     this.state = 'opened';
   }
+  
   get message(): string { return this._message; }
   _message: string;
  

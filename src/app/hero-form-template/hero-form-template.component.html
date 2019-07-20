@@ -1,5 +1,4 @@
 <div class="container">
-
   <h1>Template-Driven Form</h1>
   <form #heroForm="ngForm" appIdentityRevealed>
     <div [hidden]="heroForm.submitted">
@@ -9,10 +8,8 @@
           <input id="name" name="name" class="form-control"
                 required minlength="4" appForbiddenName="bob"
                 [(ngModel)]="hero.name" #name="ngModel" >
-
           <div *ngIf="name.invalid && (name.dirty || name.touched)"
               class="alert alert-danger">
-
             <div *ngIf="name.errors.required">
               Name is required.
             </div>
@@ -22,10 +19,8 @@
             <div *ngIf="name.errors.forbiddenName">
               Name cannot be Bob.
             </div>
-
           </div>
         </div>
-
         <div class="form-group">
           <label for="alterEgo">Alter Ego</label>
           <input id="alterEgo" class="form-control" name="alterEgo"
@@ -33,7 +28,6 @@
                 [(ngModel)]="hero.alterEgo"
                 [ngModelOptions]="{ updateOn: 'blur' }"
                 appUniqueAlterEgo>
-
           <div *ngIf="alterEgo.pending">Validating...</div>
           <div *ngIf="alterEgo.invalid" class="alert alert-danger alter-ego-errors">
             <div *ngIf="alterEgo.errors?.uniqueAlterEgo">
@@ -41,12 +35,10 @@
             </div>
           </div>
         </div>
-
         <div *ngIf="heroForm.errors?.identityRevealed && (heroForm.touched || heroForm.dirty)" class="cross-validation-error-message alert alert-danger">
             Name cannot match alter ego.
         </div>
       </div>
-
       <div class="form-group">
         <label for="power">Hero Power</label>
         <select id="power" name="power" class="form-control"
@@ -58,13 +50,11 @@
           <div *ngIf="power.errors.required">Power is required.</div>
         </div>
       </div>
-
       <button type="submit" class="btn btn-default"
               [disabled]="heroForm.invalid">Submit</button>
       <button type="button" class="btn btn-default"
               (click)="heroForm.resetForm({})">Reset</button>
     </div>
-
     <div class="submitted-message" *ngIf="heroForm.submitted">
       <p>You've submitted your hero, {{ heroForm.value.name }}!</p>
       <button (click)="heroForm.resetForm({})">Add new hero</button>

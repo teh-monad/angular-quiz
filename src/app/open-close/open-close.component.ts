@@ -28,8 +28,7 @@ import {trigger, state, style, animate, transition} from '@angular/animations';
   styleUrls: ['open-close.component.styl']
 })
 export class OpenCloseComponent {
-  isOpen = true;
- 
+  isOpen = true; 
   toggle() {
     this.isOpen = !this.isOpen;
   }

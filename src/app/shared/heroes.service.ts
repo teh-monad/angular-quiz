@@ -8,7 +8,6 @@ const ALTER_EGOS = ['Eric'];
 export class HeroesService {
   isAlterEgoTaken(alterEgo: string): Observable<boolean> {
     const isTaken = ALTER_EGOS.includes(alterEgo);
-
     return of(isTaken).pipe(delay(400));
   }
 }

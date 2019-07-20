@@ -33,9 +33,7 @@ import { SpyDirective } from './spy.directive';
 import { SpyComponent } from './spy/spy.component';
 
 const appRoutes: Routes = [
-  {path: 'about', component: AboutComponent},
-  {path: '', redirectTo: '/home', pathMatch: 'full'},
-  {path: '**', redirectTo: '/home', pathMatch: 'full'} 
+  {path: 'about', component: AboutComponent}
 ];
 
 @NgModule({

@@ -75,5 +75,4 @@ export class AppComponent  { //implements OnInit
           () => this.finished = true
       );
   }
-
 }
