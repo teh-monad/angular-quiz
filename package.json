@@ -27,7 +27,7 @@
     "express": "^4.17.1",
     "jquery": "^3.5.0",
     "jquery-ui": "^1.12.1",
-    "lodash": ">=4.17.19",
+    "lodash": ">=4.17.21",
     "mongoose": "^5.10.9",
     "npm-registry-fetch": ">=4.0.5",
     "popper": "^1.0.1",
