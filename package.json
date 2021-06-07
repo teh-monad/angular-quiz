@@ -28,7 +28,7 @@
     "jquery": "^3.6.0",
     "jquery-ui": "^1.12.1",
     "lodash": "^4.17.21",
-    "mongoose": "^5.12.10",
+    "mongoose": "^5.12.13",
     "npm-registry-fetch": "^10.1.2",
     "popper": "^1.0.1",
     "popper.js": "^1.16.1",
